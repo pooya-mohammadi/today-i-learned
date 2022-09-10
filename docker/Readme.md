@@ -680,3 +680,14 @@ docekr install buildx
 ```
 docker system prune -a
 ```
+
+## How to list containers running in by a docker-compose
+```commandline
+docker-compose ps
+```
+
+## How to exec to a container running by a docker-compose
+```commandline
+docker-compose exec <service-name> bash/sh
+```
+
