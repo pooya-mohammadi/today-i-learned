@@ -426,3 +426,9 @@ mount /dev/vg<gp number>/vol <mount-path> -o uid=1000,gid=ai,rw
 mount /dev/vg0/vol /home/... -o uid=1000,gid=ai,rw
 chmod -R a+rwX /home/...
 ```
+
+## To check what are mounted on a linux machine:
+```commandline
+mount
+```
+Just that!
