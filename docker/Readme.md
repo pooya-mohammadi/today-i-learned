@@ -691,3 +691,5 @@ docker-compose ps
 docker-compose exec <service-name> bash/sh
 ```
 
+## Why choosing container raises error while replica is chosen:
+Because there are more than one container, and each of them cannot have the same container_name! 
