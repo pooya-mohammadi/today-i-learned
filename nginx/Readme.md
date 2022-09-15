@@ -11,3 +11,8 @@ the url is entered in.
 ## How to beautify nginx config
 Using the following link:
 https://nginxbeautifier.github.io/
+
+## How to reload nginx without downtime from docker-compose
+```commandline
+docker-compose exec [image-name] nginx -s reload
+```
