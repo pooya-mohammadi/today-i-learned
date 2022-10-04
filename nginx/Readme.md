@@ -16,3 +16,14 @@ https://nginxbeautifier.github.io/
 ```commandline
 docker-compose exec [image-name] nginx -s reload
 ```
+
+## How to ignore  host not found in upstream "minio:9000" in /etc/nginx/conf.d/nginx.conf
+When there is something like below:
+```commandline
+upstream minio
+{
+	server container:port;
+}
+```
+And the container is down you get the error
+How to tell the nginx to ignore it?
