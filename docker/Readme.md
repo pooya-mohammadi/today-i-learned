@@ -578,22 +578,27 @@ sudo nano /lib/systemd/system/docker.service
 # change following line:
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 # to:
-ExecStart=/usr/bin/dockerd -g /home/ai/projects/docker-images  -H fd:// --containerd=/run/containerd/containerd.sock
+ExecStart=/usr/bin/docker -g /home/ai/projects/docker-images  -H fd:// --containerd=/run/containerd/containerd.sock
 # check
 ps aux | grep -i docker | grep -v grep
 # References: https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-directory-on-ubuntu-debian-linux
 ```
+Check this too:
+https://www.guguweb.com/2019/02/07/how-to-move-docker-data-directory-to-another-location-on-ubuntu/
 
-How to restart:
+
+## How to restart:
 ```
 sudo systemctl restart docker.socket docker.service
+sudo systemctl daemon-reload
 ```
 
-How to run a docker as a root user
+
+
+## How to run a docker as a root user
 ```
 sudo docker run -it --rm -u0 fluent/fluentd:v1.14-debian bash
-# -u0
-It's equivalent to: USER root inside docekrfiles
+# -u0 is equivalent to: USER root inside docekrfiles
 ```
 
 how to force delete an image or a container:
