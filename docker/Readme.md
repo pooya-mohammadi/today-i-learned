@@ -707,3 +707,14 @@ export DOCKER_BUILDKIT=0
 export COMPOSE_DOCKER_CLI_BUILD=0
 ```
 Note: Each time running a terminal, these commands should be executed because they are active for just aa session! 
+
+
+## Warning Retrying error before while installing python libraries
+```commandline
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/librosa/
+```
+It primarily happens when the internet connection is terrible. One can increase the connection timeout using the following
+commands:
+```commandline
+python -m pip install --default-timeout=1000 --no-cache-dir --upgrade pip
+```
