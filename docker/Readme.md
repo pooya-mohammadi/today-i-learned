@@ -697,4 +697,13 @@ docker-compose exec <service-name> bash/sh
 ```
 
 ## Why choosing container raises error while replica is chosen:
-Because there are more than one container, and each of them cannot have the same container_name! 
+Because there are more than one container, and each of them cannot have the same container_name!
+
+
+## TLS handshake error
+Running the following commands before running the main docker file can solve the issue.
+```commandline
+export DOCKER_BUILDKIT=0
+export COMPOSE_DOCKER_CLI_BUILD=0
+```
+Note: Each time running a terminal, these commands should be executed because they are active for just aa session! 
