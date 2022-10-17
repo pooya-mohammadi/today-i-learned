@@ -718,3 +718,7 @@ commands:
 ```commandline
 python -m pip install --default-timeout=1000 --no-cache-dir --upgrade pip
 ```
+
+## librosa & soundfile installation
+Based on my few tests, librosa requires soundfile to be installed on OS. In addition, the soundfile cannot be installed
+on python-slim-buster and needs python-buster!
