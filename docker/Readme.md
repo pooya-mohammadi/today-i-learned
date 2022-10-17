@@ -225,9 +225,12 @@ How to run docker without sudo on ubuntu
 sudo setfacl -m user:$USER:rw /var/run/docker.sock
 ```
 
-How to print the logs of a container
+## How to print the logs of a container
 ```
+# docekr
 docker container logs container-id
+# docker-compose
+docker-compose logs image_name_in_docker_compose
 ```
 
 How to ignore files from docker:
