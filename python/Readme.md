@@ -354,3 +354,12 @@ The name of the service should be wrapped in string, so it could be forked by di
 if __name__ == '__main__':
     run("entry_point:app", host=HOST, port=PORT_NUMBER, workers=4, reload=True)
 ```
+
+## Where to find wheel files
+Some libraries like pytorch have their own website offering the wheel file. However, you can find the wheel files of almost
+any project in the following link:
+```commandline
+https://www.wheelodex.org/projects
+https://www.wheelodex.org/projects/deep-utils/
+https://www.wheelodex.org/projects/librosa/
+```
