@@ -363,3 +363,10 @@ https://www.wheelodex.org/projects
 https://www.wheelodex.org/projects/deep-utils/
 https://www.wheelodex.org/projects/librosa/
 ```
+
+## To define an enum with str use the following format
+```commandline
+class ClsName(str, Enum)
+# not
+class ClsName(Enum, str) # raises error!!
+```
