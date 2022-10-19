@@ -725,3 +725,13 @@ python -m pip install --default-timeout=1000 --no-cache-dir --upgrade pip
 ## librosa & soundfile installation
 Based on my few tests, librosa requires soundfile to be installed on OS. In addition, the soundfile cannot be installed
 on python-slim-buster and needs python-buster!
+
+## How to keep containers alive when daemon is down
+```commandline
+sudo nano /etc/docker/daemon.json
+>>> add the following
+{
+  "live-restore": true
+}
+sudo systemctl reload docker -> to reload docker
+```
