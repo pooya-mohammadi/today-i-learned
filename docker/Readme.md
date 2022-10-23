@@ -735,3 +735,8 @@ sudo nano /etc/docker/daemon.json
 }
 sudo systemctl reload docker -> to reload docker
 ```
+
+## How to copy a file from container to host
+```
+docker container-id/<dir-1>/.../<file-name> <local-host-dir>/<file-name>
+```
