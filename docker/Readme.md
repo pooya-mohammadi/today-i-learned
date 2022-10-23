@@ -740,3 +740,8 @@ sudo systemctl reload docker -> to reload docker
 ```
 docker container-id/<dir-1>/.../<file-name> <local-host-dir>/<file-name>
 ```
+
+## How to check running processes
+```
+docker top <container ID>
+```
