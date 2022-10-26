@@ -384,7 +384,7 @@ parser.add_argument("--arg-name",
 1) Add `!` before commands
 2) Add `%%bash` add the beginning of the cell
 
-## How to view the source code of module in jupyter notebook:
+## How to view the source code of a module in jupyter notebook:
 ```
 ??module-name
 ```
@@ -399,4 +399,12 @@ time() -> floating point number
 Return the current time in seconds since the Epoch.
 Fractions of a second may be present if the system clock provides them.
 Type:      builtin_function_or_method
+```
+## How to view the definition of a module in jupyter notebook:
+```
+help(module)
+```
+or
+```
+?module
 ```
