@@ -379,3 +379,7 @@ parser.add_argument("--arg-name",
         choices=["default-val", "default-val-1", "default-val-2"],
     ),
 ```
+
+## How to convert a jupyter notebook cell to a terminal
+1) Add `!` before commands
+2) Add `%%bash` add the beginning of the cell
