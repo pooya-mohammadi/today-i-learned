@@ -383,3 +383,20 @@ parser.add_argument("--arg-name",
 ## How to convert a jupyter notebook cell to a terminal
 1) Add `!` before commands
 2) Add `%%bash` add the beginning of the cell
+
+## How to view the source code of module in jupyter notebook:
+```
+??module-name
+```
+example:
+```
+from time import time
+??time
+output: >>
+Docstring:
+time() -> floating point number
+
+Return the current time in seconds since the Epoch.
+Fractions of a second may be present if the system clock provides them.
+Type:      builtin_function_or_method
+```
