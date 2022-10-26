@@ -370,3 +370,12 @@ class ClsName(str, Enum)
 # not
 class ClsName(Enum, str) # raises error!!
 ```
+
+## How to add permitted choices to argparser:
+```
+parser.add_argument("--arg-name",
+        default="default-val",
+        type=str,
+        choices=["default-val", "default-val-1", "default-val-2"],
+    ),
+```
