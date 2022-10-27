@@ -408,3 +408,21 @@ or
 ```
 ?module
 ```
+
+## What is `functools.partial`
+It simply generates a new function from a predefined function.</br>
+Using `partial` one can change the default variables and add new default vlaues
+```
+from functools import partial
+def func(a, b=False):
+     print(a, b)
+f = partial(func, b=True)
+f(1)
+# output: 1 True
+
+f = partial(func, a=2, b=True)
+f()
+# ouptut 2, True
+```
+ 
+
