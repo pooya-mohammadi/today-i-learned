@@ -170,7 +170,7 @@ predict(classification, tokenizer, 'خیلی بد بود')
 
 Note:
 the model which has been given to the trainer for the instance creation is not changed through training you need to load the model from checkpoints or the trainer's one
-
+![](images/transformer-3.png)
 Validation: How to get validation after training:
 ```
 from sklearn.metircs import f1_score, classfication_report
