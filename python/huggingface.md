@@ -69,3 +69,36 @@ tokenizer.convert_ids_to_tokens(output["input_ids"])
  'م']
 ```
 **Note:** The '|' is word delimiter token!
+
+Some other formats:
+```commandline
+tokenizer.tokenize("سلام من پویا هستم")
+```
+output: `['س',
+ 'ل',
+ 'ا',
+ 'م',
+ '|',
+ 'م',
+ 'ن',
+ '|',
+ 'پ',
+ 'و',
+ 'ی',
+ 'ا',
+ '|',
+ 'ه',
+ 'س',
+ 'ت',
+ 'م']`
+
+Only the ids:
+```commandline
+tokenizer.encode("سلام من پویا هستم")
+[18, 28, 7, 29, 4, 29, 30, 4, 33, 32, 38, 7, 4, 31, 18, 9, 29]
+```
+Let's decode:
+```commandline
+tokenizer.decode([18, 28, 7, 29, 4, 29, 30, 4, 33, 32, 38, 7, 4, 31, 18, 9, 29])
+'سلام من پویا هستم'
+```
