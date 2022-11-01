@@ -425,4 +425,8 @@ f()
 # ouptut 2, True
 ```
  
-
+## How to reload a module
+```
+import importlib
+importlib.reload(module)
+```
