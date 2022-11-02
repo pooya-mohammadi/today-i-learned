@@ -23,3 +23,6 @@ I tried to change it's uid from 1000 to 1001 (1000 is reserved for linux) using 
 # USER elasticsearch
 ```
 ### Note: Maybe the final error message could have been ignored!!!
+
+## What is error elasticsearch exited unexpectedly 137 docker
+This error happends when there is not enough memory available for elasticsearch. Minimum of 2 gigabyte RAM is required!
