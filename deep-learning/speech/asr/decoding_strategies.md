@@ -25,6 +25,9 @@
       2) There are some vocabs that may not appear in the dataset. At inference time, they may cause problems!
    2) CTC character based. There will be no problem of OOV(out of vocabulary), but it needs a language model to make the output prediction realistic
    3) byte-pair-encoding (BPE). they tokenize a corpus. They can create OOV words if they had large token size!
+   4) Some believe that attention module can compensate the lack of language model in E2E models because it addresses the exact part of input features that are required. However, some are not in the favor of this idea
+      1) https://www.isca-speech.org/archive/pdfs/interspeech_2021/egorova21_interspeech.pdf
+         1) Conclusion: CTC alignments provide better temporal information about word positions than the pure attention-based E2E system and so are more suitable for extracting OOV occurrences
 2) Examples:
    1) Wav2vec2 is character based mainly because it's trained over several languages!
    2) Most fast ASR models are based on byte-pair-encoding because they should be used for one language, and they are not open vocabulary.
