@@ -432,3 +432,17 @@ chmod -R a+rwX /home/...
 mount
 ```
 Just that!
+
+
+## How to find process ids:
+```commandline
+ps aux
+```
+Using the following `grep` the one process you are looking for:
+```commandline
+ps aux | grep <process name>
+```
+In case you want to kill it, find the first id and run the following command:
+```commandline
+sudo kill -9 <pid>
+```
