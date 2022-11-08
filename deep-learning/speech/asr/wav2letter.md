@@ -5,10 +5,12 @@
 2) Output: letter scores (one score per letter, given a dictionary L)
 3) CNN model
    1) 1D convolutional neural networks
-   2) pointwise activation func
+   2) pointwise activation func: 
+      3) point-wise means it's applied to only one point in a vector. ReLU is point-wise activation function!
       1) HardTanh & ReLU led to same results
    3) strid & no pooling
-   4) raw-wave has a huge first conv-layer at the beginning of the arch with a large stride to compensate for the enormous input size(16KHz)
+   4) ![img.png](images/wav2letter/wav2letter_2016_raw_wav.png)
+   5) raw-wave has a first conv-layer with a huge kernel-size=250 and a large stride(dw)=160 at the beginning of the arch with a large stride to compensate for the enormous input size(16KHz)
    5) MFCC & power spectrum do not have the first layer of the main arch
 4) No CTC -> something like it
    1) ASG: Audio Segmentation Criterion which does not have blank letters and other features where used
