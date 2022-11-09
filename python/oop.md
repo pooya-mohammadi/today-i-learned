@@ -31,3 +31,7 @@ if __name__ == '__main__':
 References:</br>
 https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python </br>
 https://python-course.eu/oop/metaclasses.php
+
+**Arguments:**
+Some users on stackoverflow discourage the usage of Singleton approach and suggest the using of modules in python!
+I am, however, inclined to believe that the usage of `Singleton` is more professional and neat.
