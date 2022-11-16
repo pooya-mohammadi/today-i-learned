@@ -101,8 +101,97 @@
 
 1) ![img.png](images/wave/sample-rate.png)
 2) Sample rate
-    3) sample rate for librosa is 22050Hz
-    4) old cds' sample rate is 44100Hz
-5) bit-depth is the quantization accuracy.
-    4. higher bit depth means we can sample with finer details.
-    1. 16 bits means we can have 16 concrete numbers.
+    1) sample rate for librosa is 22050Hz
+    2) old cds' sample rate is 44100Hz
+3) bit-depth is the quantization accuracy.
+    1. higher bit depth means we can sample with finer details.
+    2. 16 bits means we can have 16 concrete numbers.
+
+# FFT -> Fast Fourier Transform 
+1) To decompose time domain to frequency domain, FFT is used!
+
+# DFT: Discrete Fourier Transform
+1) Spectral Vector (#frequency bins)
+2) N complex Fourier Coefficients
+3) Everything is averaged over the whole duration of the signal!
+
+# STFT: Short-Time Fourier Transform
+1) ![img_1.png](images/wave/img_1.png)
+2) Applying each fourier transform upon each frame would let us access the time domain as well as the frequency domain! 
+3) frame-size: The amount of audio chunk that is used to perform fourier on it
+4) window-size: It's an equation that is multiplied to the frame
+   1) most of the time, their length are the same
+   2) A window function can be rectangle. 
+   3) Most of the time, hann window function is used
+   4) ![img_3.png](images/wave/img_3.png)
+   5) This will avoid discontinuity at the ends!
+   6) It prevents spectral leakage!
+5) hot size (H): how many samples we slide to right to take new frame. Equivalent to stride!
+   1) Setting hot size to frame size means there is no overlapping! 
+   2) ![img_2.png](images/wave/img_2.png)
+   3) half of the frame size most of the time!
+6) What we get:
+   1) Spectral matrix(#frequency bins, # frames)
+   2) Complex Fourier Coefficients
+   3) Note:
+      1) frames are proxies for time. They are not exact because in each time frame we get approximation for whole the segment.
+7) #frequency bins = framesize/2 + 1 -> check DFT for more information
+8) #frames = (samples - framesize)/ hop-size + 1
+9) Example:
+   1) signal: 19k, frame-size: 1000, hop-size= 500
+   2) frequency-bin: 501, frames= 19
+   3) stft: (501, 19)
+## Time / frequency trade off
+1) large frame size -> high frequency resolution & lower time resolution
+   1) why lower time resolution: because we are averaging over a large chunk of time
+   2) With larger number of frequency bins the frequency resolution increases
+
+## Spectrogram
+1) To visualize sound we can use spectrogram
+2) Using heat map we can visualize the frequencies
+3) Formula: Y(m, k) = |S(m, k)|^2
+4) ![img_4.png](images/wave/img_4.png) 
+   1) As mentioned earlier, time is discrete. Each chunk is a frame. Each discontinuity represents a frame.
+   2) In the y axis, we have the frequency bins.
+      1) We can see how different frequency component evolve through time!
+5) Code:
+```python
+frame_size = 2048
+hop_size = 512
+s_wave = librosa.stft(wave, n_fft=frame_size, hot_length=hop_size)
+print("(bins, frames) ->", s_wave.shape, s_wave.dtype)
+# (bins, frames) -> (1025, 342), numpy.complex
+spectrogram = np.abs(s_wave) ** 2 # :)
+print("(bins, frames) ->", spectrogram.shape, spectrogram.dtype)
+# (bins, frames) -> (1025, 342), numpy.float
+s_log_wave = librosa.power_to_db(spectrogram) # scales the amplitude of the sound to db
+```
+## Power spectrogram
+1) Spectrogram with Perceptually-relevant amplitude representation is power-spectrogram!
+## Reference: https://youtu.be/-Yxj3yfvY-4
+
+
+
+# Mel-Spectrogram
+1) we perceive frequency logarithmically
+2) Ideal audio feature:
+   1) Time-frequency representation
+   2) Perceptually-relevant amplitude representation
+      1) vanilla spectrogram provides this for us
+   3) Perceptually-relevant frequency representation
+      1) Mel-spectrogram has all of them
+3) Mel-scale
+   1) Logarithmic scale
+   2) Equal distances on the scale have same "perceptual" distance
+4) mel: melody. 
+5) m = 2595 * log(1+ (f/500)) -> this is an empirical formula
+6) f = 700* (10^(m/2595) -1)
+7) Recipe:
+   1) Extract STFT
+   2) Convert Amplitude to DBs
+   3) Convert frequencies to Mel Scale
+8) mel-bands
+9) mel-filter banks
+10) apply
+
+## Reference: https://youtu.be/9GHCiiDLHQ4
