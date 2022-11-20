@@ -190,8 +190,36 @@ s_log_wave = librosa.power_to_db(spectrogram) # scales the amplitude of the soun
    1) Extract STFT
    2) Convert Amplitude to DBs
    3) Convert frequencies to Mel Scale
-8) mel-bands
-9) mel-filter banks
-10) apply
+8) mel-bands: 
+   9) How many mel-bands? It depends on the problem. It's like a hyper-paramer
+      10) 40, 60, 90, 128
+   11) Number of mel-bands kind of references to the number of unique(not quite sure about this term) frequencies that are used in the input audio. Mainly, 40 distinct frequencies are used in western music.
+11) How to construct mel-filter banks
+    12) Convert lowest/highest frequency to Mel
+        12) m = 2595 * log(1 + (f/500))
+    13) Create # bands equally spaced points
+        10) Now that we have the lowest and the highest mel-banks
+        11) We want to equally split the distance to the number of mel-banks we want to use.
+    12) Convert points back to Hertz :)
+        13) f = 700(10^(m/2595) - 1)
+    14) Round to the nearest frequency
+    15) Create triangular filters
+        16) ![img.png](images/wave/mel-triangular.png)
+        17) In this image, we have six mel-bands
+            18) ex: 1526 mel is equal to 2000 frequency Hz
+        19) The image literally says, as we go further in terms of frequency, we should express more frequency to be perceptually understandable. This is the way we perceive peatch.
+        20) The head of a triangle is one of the bands. The other two nodes of any triangle is the previous and subsequent mel-bands converted to frequency.
+        21) Weights: is representative of how filter is going to be applied. Weights of 1.0 means zero filter bank
+21) Mel filter banks' shape
+    22) (#bands, framesize/2 +1)
+23) Applying filter banks to spectrogram!
+    10) M = (#bands, framesize/2 +1)
+    11) Y = (freamesize/2 + 1, #frames) -> shape of a spectrogram!(nikoest frequency!)
+    12) Mel Spectrogram = MY :) -> (#bands, #frames)
+13) Mel-spectrogram:
+    14) ![img.png](images/wave/mel-spec-sample.png)
+    15) It's no different from spectrogram. Here each frequency bin is a different mel-band.
+    16) The way we show frequency in this time is more relevant to human perceiving.
+    17) 
 
 ## Reference: https://youtu.be/9GHCiiDLHQ4
