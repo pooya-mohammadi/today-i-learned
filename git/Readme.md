@@ -290,3 +290,17 @@ git push ...
 
 # Create a Pull Request...
 ```
+
+## What is `depth`
+depth determines the number of commits that one should get at clone time.<\br>
+If you have huge file commit at the beginning of a project you may don't want to clone it.
+```
+git clone --depth 2 git@github.com:pooya-mohammadi/deep_utils.git
+git log --oneline # check the latest commits
+```
+output: Only the last two commits have been cloned!
+```
+6ee6203 (HEAD -> main, origin/main, origin/HEAD) [json-utils] Add type hint
+6869274 (grafted) [json-utils] Add type hint
+```
+This is much faster than cloning all the project!
