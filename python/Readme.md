@@ -430,3 +430,36 @@ f()
 import importlib
 importlib.reload(module)
 ```
+
+
+## How to use TypeVar:
+1) When you want the input and output to be the same:
+```
+from typing import TypeVar
+
+T = TypeVar("T")
+
+def identity(arg: T) -> T:
+    return arg
+```
+2) or
+```AnyString = TypeVar("AnyString", str, bytes)
+
+def triple(string: AnyString) -> AnyString:
+    return string * 3
+
+unicode_scream = triple("A") + "!"
+bytes_scream = triple(b"A") + b"!"
+```
+Reference: https://dev.to/decorator_factory/typevars-explained-hmo
+
+3) When to bound to a class
+```
+ClsA = TypeVar("ClsA", bound="A")
+class A:
+    def func(self) -> ClsA:
+       pass
+```
+
+
+
