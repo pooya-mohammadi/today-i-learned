@@ -135,7 +135,7 @@
    2) Complex Fourier Coefficients
    3) Note:
       1) frames are proxies for time. They are not exact because in each time frame we get approximation for whole the segment.
-7) #frequency bins = framesize/2 + 1 -> check DFT for more information
+7) framesize/2 + 1-> check DFT for more information
 8) #frames = (samples - framesize)/ hop-size + 1
 9) Example:
    1) signal: 19k, frame-size: 1000, hop-size= 500
