@@ -49,6 +49,21 @@ Install Docker Compose
 sudo apt install docker-compose -y
 ```
 
+## How install docker by download deb files:
+```
+browse the following link:
+https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64/
+You have to install
+containerd.io
+docker-ce
+docker-ce-cli
+docker-ce-rootless-extras
+```
+Make sure you use the same releases. To install use the following command:
+```
+dpkg -i path/package-name.deb
+```
+
 Enable Docker
 
 ```
