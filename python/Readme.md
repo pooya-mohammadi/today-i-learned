@@ -467,5 +467,9 @@ re.search('(\w*)-(\d*)end$', file, re.IGNORECASE)
 ```
 `$` is idicator of end of search. If anything comes after `end` in this example, it is not matched because after end nothing should come!
 
-
+## How to get preferred encoding in python:
+```python
+import locale
+locale.getpreferredencoding()
+```
 
