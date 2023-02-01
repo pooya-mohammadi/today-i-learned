@@ -46,7 +46,8 @@ How to checkout a newly added branch to remove repo:
 ```
 git remote update
 git fetch # or git fetch origin branch_name
-git checkout branch_name
+git checkout -b branch_name
+git pull origin branch_name
 ```
 
 How to pull when you have made some changes:[stash]
