@@ -42,9 +42,10 @@ git reset --hard HEAD
 ```
  # this goes to the head commit you can use git log --oneline to find previous commits
 
-If you check out a branch and you get an error regarding the absence of the branch follow the instructions: you need to fetch the remote
+How to checkout a newly added branch to remove repo:
 ```
 git remote update
+git fetch # or git fetch origin branch_name
 git checkout branch_name
 ```
 
