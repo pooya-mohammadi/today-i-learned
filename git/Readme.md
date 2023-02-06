@@ -49,6 +49,10 @@ git fetch # or git fetch origin branch_name
 git checkout -b branch_name
 git pull origin branch_name
 ```
+or
+```
+git checkout -b branch_name origin/branch_name
+```
 
 How to pull when you have made some changes:[stash]
 ```
