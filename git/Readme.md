@@ -54,6 +54,11 @@ or
 git checkout -b branch_name origin/branch_name
 ```
 
+How to see all the branches:
+```
+git branch -a # shows the hidden branches
+```
+
 How to pull when you have made some changes:[stash]
 ```
 git stash
