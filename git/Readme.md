@@ -143,7 +143,7 @@ If a branch is not fully merged you can't remove it, because it will leave unrea
 git branch -d test # raises an error: The branch 'test' is not fully merged.
 git branch -D test # this will do the job
 ```
-How to rename a git branch:
+## How to rename a git branch:
 ```
 git checkout <target-branch>
 git branch -m <new branch name>
