@@ -54,6 +54,15 @@ or
 git checkout -b branch_name origin/branch_name
 ```
 
+How to review a fork pull request:
+```
+git remote add <username> <repo-address>
+# note: <username> could be anything but it's better to use the same person's name to prevent future conflicts
+git fetch <remote-name> <branch-name>
+git checkout -t <remote-name>/<branch-name>
+# note: t stands for temporary. Because you will only review the code
+```
+
 How to see all the branches:
 ```
 git branch -a # shows the hidden branches
