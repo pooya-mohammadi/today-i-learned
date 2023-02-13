@@ -244,6 +244,10 @@ How to see changes of a commit with another one
 ```
 git diff commit-hash commit-hash
 ```
+## How to clone only one branch:
+```
+git clone --single-branch --branch <branch-name> <repository-name>
+```
 
 ### How to undo the latest commit:
 ```commandline
