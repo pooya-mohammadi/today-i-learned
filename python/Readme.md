@@ -460,6 +460,14 @@ class A:
     def func(self) -> ClsA:
        pass
 ```
+## How to type hint a class
+```
+from typing import Type
+class RandomClass:
+    ...
+def take_cls(cls: Type[RandomClass]):
+    cls.from_pretrained...
+```
 
 ## How to set end of search in re(regular expression)
 ```
