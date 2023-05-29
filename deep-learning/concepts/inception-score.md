@@ -41,3 +41,5 @@ The conditional entropy is calculated for each class and then the average of the
    7. mean_conditional_entropy = 1/N * ∑[H(y|x)]
    **7. IS = exp(mean_conditional_entropy)**
    8. Here, mean_conditional_entropy is the mean conditional entropy calculated in the previous step.
+9. Inception Score is a single number that represents the quality of the generated images. The higher the Inception Score, the better the quality of the generated images.
+10. Inception Score ranges from 1 to 10. The higher the Inception Score, the better the quality of the generated images.
