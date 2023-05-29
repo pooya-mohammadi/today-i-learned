@@ -42,10 +42,30 @@ git reset --hard HEAD
 ```
  # this goes to the head commit you can use git log --oneline to find previous commits
 
-If you check out a branch and you get an error regarding the absence of the branch follow the instructions: you need to fetch the remote
+How to checkout a newly added branch to remove repo:
 ```
 git remote update
-git checkout branch_name
+git fetch # or git fetch origin branch_name
+git checkout -b branch_name
+git pull origin branch_name
+```
+or
+```
+git checkout -b branch_name origin/branch_name
+```
+
+How to review a fork pull request:
+```
+git remote add <username> <repo-address>
+# note: <username> could be anything but it's better to use the same person's name to prevent future conflicts
+git fetch <remote-name> <branch-name>
+git checkout -t <remote-name>/<branch-name>
+# note: t stands for temporary. Because you will only review the code
+```
+
+How to see all the branches:
+```
+git branch -a # shows the hidden branches
 ```
 
 How to pull when you have made some changes:[stash]
@@ -123,7 +143,7 @@ If a branch is not fully merged you can't remove it, because it will leave unrea
 git branch -d test # raises an error: The branch 'test' is not fully merged.
 git branch -D test # this will do the job
 ```
-How to rename a git branch:
+## How to rename a git branch:
 ```
 git checkout <target-branch>
 git branch -m <new branch name>
@@ -223,6 +243,10 @@ git check-ignore -v <file-name>
 How to see changes of a commit with another one
 ```
 git diff commit-hash commit-hash
+```
+## How to clone only one branch:
+```
+git clone --single-branch --branch <branch-name> <repository-name>
 ```
 
 ### How to undo the latest commit:

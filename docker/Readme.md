@@ -760,3 +760,8 @@ docker container-id/<dir-1>/.../<file-name> <local-host-dir>/<file-name>
 ```
 docker top <container ID>
 ```
+
+## How to remove all the docker files and volumes:
+```
+docker system prune -af
+```
