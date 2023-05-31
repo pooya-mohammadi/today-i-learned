@@ -446,3 +446,23 @@ In case you want to kill it, find the first id and run the following command:
 ```commandline
 sudo kill -9 <pid>
 ```
+
+## How to run a service in the background even after closing the terminal:
+```commandline
+nohup <command> &
+```
+The output will be saved in `nohup.out` file.
+
+### How to save only last 1000 lines of output using `nohup`
+```commandline
+nohup <command> | tail -n 1000 > nohup.out &
+```
+`nohup` doesn't have a mechanism for limiting the size of the output file. Therefore, we need to use `tail`.
+
+### How to see the output while saving with limits using `nohup`
+```commandline
+nohup your-command | tee >(tail -n 1000 > output.log) &
+```
+`tee` is a command that reads from standard input and writes to standard output and files.
+ It's used for redirecting output to multiple destinations, such as writing to a file and stdout.
+ `tee` is normally used in conjunction with other commands through piping.
