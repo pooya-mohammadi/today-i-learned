@@ -61,7 +61,11 @@ echo 'export CUDA_HOME=/usr/local/cuda-11.6' >> ~/.bashrc
 source ~/.bashrc
 sudo ldconfig
 ```
-
+*NOTE*: If you have several cuda installed, you do the following for temporary changing the cuda version:
+```
+export CUDA_HOME=/usr/local/cuda-12.1
+# do the rest
+```
 For Windows:
 The Windows downloads it for you no need to bother
 Even for Ubuntu you can use third-party drivers to install the one that is "tested"
