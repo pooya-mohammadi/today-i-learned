@@ -52,7 +52,7 @@ Install cuda( we go for cuda 11). It may take a while.
 sudo apt-get update 
 sudo apt-get -o Dpkg::Options::="--force-overwrite" install cuda-11-2 cuda-drivers
 ```
-
+*NOTE*: the cuda version which is 11-2 in this can be changed to any version your system requires! 11-7 12-1 and so on.
 Add the Cuda path to your bashrc so it would be in the PATH for each terminal
 ```
 echo 'export PATH=/usr/local/cuda-11.6/bin${PATH:+:${PATH}}' >> ~/.bashrc
