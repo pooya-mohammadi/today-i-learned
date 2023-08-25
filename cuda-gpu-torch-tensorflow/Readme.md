@@ -92,8 +92,10 @@ sudo cp -R lib/* /usr/local/cuda/lib64
 sudo apt-get install libcupti-dev
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 ```
+*NOTE*: Tensorflow 2 on python 3.11 requires cuda 11. I installed 11.8 and it worked.
+*NOTE*: Torch works with any cuda version say 11 or 12!
 
-Install TensorFlow-2:
+Install TensorFlow-2: 
 ```
 # GPU
 conda create -n tf_gpu python=3.9 tensorflow
