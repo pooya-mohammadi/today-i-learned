@@ -466,3 +466,11 @@ nohup your-command | tee >(tail -n 1000 > output.log) &
 `tee` is a command that reads from standard input and writes to standard output and files.
  It's used for redirecting output to multiple destinations, such as writing to a file and stdout.
  `tee` is normally used in conjunction with other commands through piping.
+
+## How to check Disk Usage on Terminal:
+```
+sudo apt install ncdu
+ncdu / # shows the disk size of root
+# using d key, you can delete the file or directory
+```
+Very handy, thanks to https://github.com/mostafabayat
