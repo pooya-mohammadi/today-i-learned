@@ -474,3 +474,13 @@ ncdu / # shows the disk size of root
 # using d key, you can delete the file or directory
 ```
 Very handy, thanks to https://github.com/mostafabayat
+
+## How to kill all the request from a specific command:
+```
+run top to get your command name
+```
+Then run:
+```
+pkill -9 -f [search string]
+```
+Reference: https://unix.stackexchange.com/questions/50555/kill-many-instances-of-a-running-process-with-one-command
