@@ -36,6 +36,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 # Turn on and off your VPN
 ```
 
+## How to create a new user with all the belongings
+```
+sudo useradd -m -g ubuntu -s /bin/bash -d /home/ubuntu ubuntu
+```
+
 Easy way, but does not always install the stable version:
 
 ```
