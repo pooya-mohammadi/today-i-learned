@@ -483,4 +483,8 @@ Then run:
 ```
 pkill -9 -f [search string]
 ```
+```
+sudo pkill -f '^[search string]'
+#only those that start with search string to make it more robust and safe!
+```
 Reference: https://unix.stackexchange.com/questions/50555/kill-many-instances-of-a-running-process-with-one-command
