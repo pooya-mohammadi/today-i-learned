@@ -481,3 +481,9 @@ import locale
 locale.getpreferredencoding()
 ```
 
+## %pip vs !pip
+```
+%pip makes sure that the packages will be installed in the same environment
+!pip runs on the shell and packages may not get installed in that environment!
+```
+
