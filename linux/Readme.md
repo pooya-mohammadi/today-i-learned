@@ -488,3 +488,9 @@ sudo pkill -f '^[search string]'
 #only those that start with search string to make it more robust and safe!
 ```
 Reference: https://unix.stackexchange.com/questions/50555/kill-many-instances-of-a-running-process-with-one-command
+
+## How to check all the processes on GPU
+```
+sudo fuser -v /dev/nvidia*
+```
+kill the ones with PID of your interest using `sudo kill -9 PID`!
