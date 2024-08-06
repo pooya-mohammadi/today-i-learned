@@ -494,3 +494,11 @@ Reference: https://unix.stackexchange.com/questions/50555/kill-many-instances-of
 sudo fuser -v /dev/nvidia*
 ```
 kill the ones with PID of your interest using `sudo kill -9 PID`!
+
+## How to do grep with a pattern that starts with a dash
+```
+echo file.txt | grep -- -e
+echo file.txt | grep -- -x
+...
+```
+The -- is the key!
