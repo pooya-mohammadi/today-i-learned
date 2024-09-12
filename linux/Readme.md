@@ -406,6 +406,12 @@ sudo rsync -avu --delete remote-dir remote-root-dir
 scp -rp direcotry user@ip:<root-address>
 ```
 
+## How to do scp with sync:
+```
+rsync --ignore-existing -a directory1 direcotry2
+```
+
+
 How to keep two directories synced forever:
 ```
 rsync -avu --delete /home/interns/audio/samples_02/samples_02_01/asr/ /root/label-studio/mydata/media/upload/audio/samples_02/samples_02_01/asr/while inotifywait -r -e modify,create,delete,move /home/interns/audio/samples_02/samples_02_01/asr; do    rsync -avu --delete /home/interns/audio/samples_02/samples_02_01/asr/ /root/label-studio/mydata/media/upload/audio/samples_02/samples_02_01/asr/done# If you close the terminal it stops working# installation: sudo apt-get install inotify-tools
