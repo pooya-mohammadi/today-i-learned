@@ -508,3 +508,21 @@ echo file.txt | grep -- -x
 ...
 ```
 The -- is the key!
+
+## How to add a user to sudoers
+```
+sudo su
+chmod 755 /etc/sudoers # to make it writable
+```
+Then add the following line:
+```
+ubuntu ALL=(ALL) NOPASSWD: ALL # For running in cicd it's better to shutdown sudo requirement for this user
+```
+Then make non-writable again:
+```
+chmod 400 /etc/sudoers
+```
+
+Note: I tried `sudo adduser ubuntu sudo` but it didn't work for cicd, however, it worked in the server's temrinal.
+Thanks to: [amghazanfari](https://github.com/amghazanfari)
+
