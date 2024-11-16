@@ -26,3 +26,11 @@ I tried to change it's uid from 1000 to 1001 (1000 is reserved for linux) using 
 
 ## What is error elasticsearch exited unexpectedly 137 docker
 This error happends when there is not enough memory available for elasticsearch. Minimum of 2 gigabyte RAM is required!
+
+## How to create a user in elasticsearch
+```
+docker exec elasticsearch /usr/share/elasticsearch/bin/elasticsearch-users useradd kibana_user -p your-password -r superuser
+docker exec elasticsearch /usr/share/elasticsearch/bin/elasticsearch-service-tokens create elastic/kibana kibana-token
+# Get the token and set it as env variable for kibana
+ELASTICSEARCH_SERVICEACCOUNTTOKEN=<generated-token>
+```
