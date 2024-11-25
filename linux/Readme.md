@@ -511,6 +511,11 @@ The -- is the key!
 
 ## How to add a user to sudoers
 ```
+# First create your new user
+useradd -s /bin/bash -d /home/newname -m newname
+```
+
+```
 sudo su
 chmod 755 /etc/sudoers # to make it writable
 ```
