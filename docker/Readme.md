@@ -130,6 +130,17 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    }
+}
+```
+Add the following to `/etc/docker/daemon.json`. If you don't have the file create it.
 
 
 Errors:
