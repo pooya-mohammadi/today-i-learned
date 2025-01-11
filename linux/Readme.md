@@ -531,3 +531,9 @@ chmod 400 /etc/sudoers
 Note: I tried `sudo adduser ubuntu sudo` but it didn't work for cicd, however, it worked in the server's temrinal.
 Thanks to: [amghazanfari](https://github.com/amghazanfari)
 
+## How to stop a job by port number:
+```
+netstat -nl | grep LISTEN # check port &
+fuser -k 8022/tcp
+```
+Thanks to: [KiLJ4EdeN](https://github.com/KiLJ4EdeN/)
