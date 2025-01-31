@@ -27,3 +27,14 @@ upstream minio
 ```
 And the container is down you get the error
 How to tell the nginx to ignore it?
+
+## How to restart nginx in Windows:
+```
+nginx restart in windows:
+@ECHO OFF
+cd /nginx
+taskkill /f /IM nginx.exe
+start nginx
+EXIT
+```
+Thanks to: [Shahryar-Ahmadi](https://github.com/Shahryar-Ahmadi)
