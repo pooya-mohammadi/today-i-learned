@@ -537,3 +537,9 @@ netstat -nl | grep LISTEN # check port &
 fuser -k 8022/tcp
 ```
 Thanks to: [KiLJ4EdeN](https://github.com/KiLJ4EdeN/)
+
+
+## How to only remove symbolic links:
+```
+find -type l -delete
+```
