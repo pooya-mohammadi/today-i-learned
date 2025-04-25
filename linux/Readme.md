@@ -534,6 +534,7 @@ Thanks to: [amghazanfari](https://github.com/amghazanfari)
 ## How to stop a job by port number:
 ```
 netstat -nl | grep LISTEN # check port &
+netstat -nl | grep LISTEN | grep 8888 # You can go like this too
 fuser -k 8022/tcp
 ```
 Thanks to: [KiLJ4EdeN](https://github.com/KiLJ4EdeN/)
