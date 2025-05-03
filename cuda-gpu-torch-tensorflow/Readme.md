@@ -157,3 +157,9 @@ NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver
 ```
 Go to boot manager and disable the secure boot after a clean installation of nvidia:)
 ```
+
+## How to install flash-attention
+- Make sure both g++ and gcc are version 11.
+- Install torch with cuda: pip install -U torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+- Make sure `nvcc` is used the one from cuda-124 not other cuda versioins. I did `ln -s` from miniconda cuda to /usr/local/cuda/bin/nvcc
+- pip install flash-attn
