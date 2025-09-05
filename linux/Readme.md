@@ -544,3 +544,10 @@ Thanks to: [KiLJ4EdeN](https://github.com/KiLJ4EdeN/)
 ```
 find -type l -delete
 ```
+
+## How to pass ssh/scp password in a script
+```
+sudo apt-get install sshpass
+sshpass -p "your-ssh-password" ssh/scp <command>
+```
+Thanks to: [stackoverflow](https://stackoverflow.com/a/16734873/16445477)
