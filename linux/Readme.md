@@ -551,3 +551,9 @@ sudo apt-get install sshpass
 sshpass -p "your-ssh-password" ssh/scp <command>
 ```
 Thanks to: [stackoverflow](https://stackoverflow.com/a/16734873/16445477)
+
+## How to run python with sudo:
+```
+sudo env "PATH=$PATH" python ./code.py
+```
+When doing sudo, /etc/sudoers's path is overwritten on the user's path, therefore, we need to provide user's path as and environment.
