@@ -562,3 +562,9 @@ When doing sudo, /etc/sudoers's path is overwritten on the user's path, therefor
 ```
 top -c
 ```
+
+## How to kill the parent of a multi-processing:
+```
+ps aux --forest | grep python
+```
+You can change python with anything. In the output you can find the main processes with their children.
