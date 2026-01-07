@@ -557,3 +557,8 @@ Thanks to: [stackoverflow](https://stackoverflow.com/a/16734873/16445477)
 sudo env "PATH=$PATH" python ./code.py
 ```
 When doing sudo, /etc/sudoers's path is overwritten on the user's path, therefore, we need to provide user's path as and environment.
+
+## How to see whole command:
+```
+top -c
+```
