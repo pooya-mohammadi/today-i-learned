@@ -568,3 +568,26 @@ top -c
 ps aux --forest | grep python
 ```
 You can change python with anything. In the output you can find the main processes with their children.
+
+How to exactly find the parent of an Id, specially used for LokyProcesses:
+```
+ps -f -p $(ps -o ppid= -p 4039367)
+```
+If the output saya it's `/sbin/init` then it's an stray process.
+
+You can check the ones which are more than one hour:
+```
+ps -eo pid,etime,args | grep "[l]oky" | awk '/-/ || /:[0-9][0-9]:/ {if ($2 ~ /-/ || substr($2,1,index($2,":")-1)+0 >= 1) print}'
+```
+and kill them
+```
+ps -eo pid,etime,args | grep "[l]oky" | awk '/-/ || /:[0-9][0-9]:/ {if ($2 ~ /-/ || substr($2,1,index($2,":")-1)+0 >= 1) print 1$} | xargs -r kill -9'
+```
+or only the loky ones:
+```
+ps aux | grep loky | grep -v grep
+```
+and kill by:
+```
+ps aux | grep loky | grep -v grep | xargs -r kill -9
+```
