@@ -591,3 +591,10 @@ and kill by:
 ```
 ps aux | grep loky | grep -v grep | xargs -r kill -9
 ```
+
+# How to use Cuda from miniconda:
+```
+# install pytorch with cuda (my own case)
+conda install cuda -c nvidia # make sure to have nvcc in /.../miniconda3/envs/env-name/bin/nvcc
+CUDA_HOME=/.../miniconda3/envs/env-name/bin pip install ... # or any other command.
+```
