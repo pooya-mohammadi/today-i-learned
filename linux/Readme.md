@@ -581,7 +581,12 @@ ps -eo pid,etime,args | grep "[l]oky" | awk '/-/ || /:[0-9][0-9]:/ {if ($2 ~ /-/
 ```
 and kill them
 ```
-ps -eo pid,etime,args | grep "[l]oky" | awk '/-/ || /:[0-9][0-9]:/ {if ($2 ~ /-/ || substr($2,1,index($2,":")-1)+0 >= 1) print 1$} | xargs -r kill -9'
+ps -eo pid,etime,args | grep "[l]oky" | awk '{
+    split($2, t, /[:-]/);
+    len = 0; for (i in t) len++;
+    # If len is 3, format is hh:mm:ss. If len is 4, it is dd-hh:mm:ss.
+    if (len >= 3) print $1;
+}' | xargs -r kill -9
 ```
 or only the loky ones:
 ```
