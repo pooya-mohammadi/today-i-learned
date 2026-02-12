@@ -491,3 +491,9 @@ locale.getpreferredencoding()
 The former one installs the library in the development mode, which means that if you change a line in your repository, you don't need to reinstall it because it will be applied to your code. </br>
 Note: If you have imported your library in a python kernel, you won't see the changes unless you reimport it or restarting the kernel. </br>
 The later one is just a simple installation of a library. If you change anything, you need to reinstall it again and reloading the library if you have imported it in a kernel.
+
+## How to supress itk warnings
+```
+itk.ProcessObject.SetGlobalWarningDisplay(False)
+```
+taken from [stackoverflow](https://stackoverflow.com/a/69635007/16445477)
