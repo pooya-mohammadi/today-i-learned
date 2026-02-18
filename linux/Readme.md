@@ -595,6 +595,7 @@ ps aux | grep loky | grep -v grep
 and kill by:
 ```
 ps aux | grep loky | grep -v grep | xargs -r kill -9
+ps aux | grep code_inference.py | awk '{print $2}' | xargs -r kill -9
 ```
 
 # How to use Cuda from miniconda:
