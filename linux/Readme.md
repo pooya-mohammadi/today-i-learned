@@ -592,7 +592,7 @@ or only the loky ones:
 ```
 ps aux | grep loky | grep -v grep
 ```
-and kill by:
+and kill by: >>>>>>>>>> Use this way of killing, works fine, clean, and fast
 ```
 # code_inference.py
 ps aux | grep code_inference.py | awk '{print $2}' | xargs -r kill -9
