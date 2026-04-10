@@ -501,6 +501,11 @@ sudo fuser -v /dev/nvidia*
 ```
 kill the ones with PID of your interest using `sudo kill -9 PID`!
 
+Or kill them all on gpu 1:
+```
+sudo fuser -vki /dev/nvidia1
+```
+
 ## How to do grep with a pattern that starts with a dash
 ```
 echo file.txt | grep -- -e
