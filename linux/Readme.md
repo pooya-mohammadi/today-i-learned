@@ -608,6 +608,10 @@ and this code helps to find zombie processes: Ex: vscode
 ```
 ps -ef | grep -E "code|vscode"
 ```
+and this helps to remove them whitout touching the session manager ;)
+```
+pkill -9 -f "code --type=renderer" || pkill -9 -f "code"
+```
 
 # How to use Cuda from miniconda:
 ```
