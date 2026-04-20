@@ -604,6 +604,10 @@ ps aux | grep code_inference.py | awk '{print $2}' | xargs -r kill -9
 # Loky kill
 ps aux | grep LokyProcess | awk '{print $2}' | xargs -r kill -9
 ```
+and this code helps to find zombie processes: Ex: vscode
+```
+ps -ef | grep -E "code|vscode"
+```
 
 # How to use Cuda from miniconda:
 ```
