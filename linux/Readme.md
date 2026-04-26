@@ -613,6 +613,7 @@ and this helps to remove them whitout touching the session manager ;)
 pkill -9 -f "code --type=renderer" || pkill -9 -f "code"
 ```
 
+You can do `pgrep -f "check_.py"`, put the parent name here get the id and kill it once and for all:)
 # How to use Cuda from miniconda:
 ```
 # install pytorch with cuda (my own case)
