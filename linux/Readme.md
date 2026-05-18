@@ -505,6 +505,12 @@ Or kill them all on gpu 1:
 ```
 sudo fuser -vki /dev/nvidia1
 ```
+or
+```
+for pid in $(sudo fuser /dev/nvidia0 2>/dev/null | grep -v 4247); do
+    sudo kill -9 $pid
+done
+```
 
 ## How to do grep with a pattern that starts with a dash
 ```
