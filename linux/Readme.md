@@ -620,6 +620,11 @@ pkill -9 -f "code --type=renderer" || pkill -9 -f "code"
 ```
 
 You can do `pgrep -f "check_.py"`, put the parent name here get the id and kill it once and for all:)
+```
+for pid in $(sudo fuser /dev/nvidia0 2>/dev/null | grep -v 4247); do
+    sudo kill -9 $pid
+done
+```
 # How to use Cuda from miniconda:
 ```
 # install pytorch with cuda (my own case)
