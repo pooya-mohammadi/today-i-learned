@@ -631,3 +631,10 @@ done
 conda install cuda -c nvidia # make sure to have nvcc in /.../miniconda3/envs/env-name/bin/nvcc
 CUDA_HOME=/.../miniconda3/envs/env-name/bin pip install ... # or any other command.
 ```
+
+# How to remove a part of the name of a file in linux:
+```
+for f in *_0000_seg.nii.gz; do mv "$f" "${f/_0000/}"; done
+```
+/_0000/ removes the first occurrence. ${f//_0000/} remove them all :)
+
